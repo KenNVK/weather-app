@@ -1,0 +1,38 @@
+/* Mobile & tablet*/
+@media (max-width: 1023px) {
+  .bottom-daily {
+    padding: 2px 0;
+    justify-content: flex-start;
+  }
+
+  .bottom-daily-list {
+    align-items: center;
+    display: flex;
+    padding: 0 12px;
+    width: 100%;
+  }
+
+  .daily-temp {
+    padding-top: 0 !important;
+  }
+
+  .daily-rain {
+    margin-left: auto;
+    padding: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .app-title {
+    display: none;
+  }
+  .moon,
+  .sun {
+    top: 4rem;
+    left: 84%;
+    transform: translate(-50%, -50%);
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
