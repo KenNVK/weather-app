@@ -1,7 +1,7 @@
 # Weather app with:
- Vuejs 3
+  -Vuejs 3
  
- Api free (OpenWeatherMap, mapbox)
+  -Api free (OpenWeatherMap, mapbox)
  
 ##Demo: https://weather-app.kennvk.vercel.app
 ## Project setup
