@@ -1,7 +1,7 @@
 <template>
   <div class="search-bar">
     <div class="search-location">
-      <i class="ri-map-pin-line search-location-icon"></i>
+      <i class="ri-map-pin-line search-location-icon" @click="showSearchBox = !showSearchBox"></i>
       <span class="search-location-name" @click="showSearchBox = !showSearchBox">
         {{ weather.locationName }}
       </span>
