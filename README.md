@@ -3,7 +3,7 @@
  
   -Api free (OpenWeatherMap, mapbox)
  
-##Demo: https://weather-app.kennvk.vercel.app
+## Demo: https://weather-app.kennvk.vercel.app
 ## Project setup
 
 ```
