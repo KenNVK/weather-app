@@ -73,21 +73,13 @@
 import { onBeforeMount } from "vue";
 import Searchbar from "../components/Searchbar";
 import Animations from "../components/Animations";
-<<<<<<< HEAD
-import { getWeatherData } from "../api";
-=======
 import { getWeatherData } from "../services";
->>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
 import {
   isDay,
   weather,
   setWeatherData,
   days,
-<<<<<<< HEAD
-  showSearchBox,
-=======
   isShow,
->>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
   setLocalStorage,
   saveLocalStorage,
   locationStorage,
@@ -110,11 +102,7 @@ export default {
 
     // Handle get data by curent location
     const handleCurrentLocation = () => {
-<<<<<<< HEAD
-      showSearchBox.value = false;
-=======
       isShow.value = false;
->>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
       navigator.geolocation.getCurrentPosition(position => {
         const lon = position.coords.longitude;
         const lat = position.coords.latitude;
