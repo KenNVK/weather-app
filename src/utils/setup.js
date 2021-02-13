@@ -20,8 +20,13 @@ const animations = reactive({
   clearNight: false,
   snowy: false
 });
+<<<<<<< HEAD
 const showSearchBox = ref(false);
 const searchKeyword = ref("");
+=======
+const isShow = ref(false);
+const keyWord = ref("");
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
 const locations = ref([]);
 const loading = ref(false);
 const refresh = ref(false);
@@ -33,14 +38,22 @@ const setSearchData = (data, boolean) => {
   setTimeout(() => {
     locations.value = data.features;
     loading.value = !boolean;
+<<<<<<< HEAD
   }, 1000);
+=======
+  }, 500);
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
 };
 
 const setRefreshIcon = boolean => {
   refresh.value = boolean;
   setTimeout(() => {
     refresh.value = !boolean;
+<<<<<<< HEAD
   }, 1000);
+=======
+  }, 10000);
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
 };
 
 // save data to local storage
@@ -135,8 +148,13 @@ export {
   isDay,
   weather,
   animations,
+<<<<<<< HEAD
   showSearchBox,
   searchKeyword,
+=======
+  isShow,
+  keyWord,
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
   locations,
   loading,
   days,

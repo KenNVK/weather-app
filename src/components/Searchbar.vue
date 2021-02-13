@@ -1,8 +1,13 @@
 <template>
   <div class="search-bar">
     <div class="search-location">
+<<<<<<< HEAD
       <i class="ri-map-pin-line search-location-icon" @click="showSearchBox = !showSearchBox"></i>
       <span class="search-location-name" @click="showSearchBox = !showSearchBox">
+=======
+      <i class="ri-map-pin-line search-location-icon" @click="isShow = !isShow"></i>
+      <span class="search-location-name" @click="isShow = !isShow">
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
         {{ weather.locationName }}
       </span>
     </div>
@@ -11,7 +16,11 @@
       :class="refresh ? 'refresh-icon-active' : ''"
       @click="refreshWeatherCurrent(forecastStorage.lon, forecastStorage.lat)"
     ></i>
+<<<<<<< HEAD
     <div class="search-box" v-if="showSearchBox">
+=======
+    <div class="search-box" v-if="isShow">
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
       <div class="input-wrap" :class="loading ? 'loading' : ''">
         <i class="ri-search-line search-box-icon"></i>
         <input
@@ -20,8 +29,13 @@
           placeholder="Enter City..."
           autocomplete="off"
           v-focus
+<<<<<<< HEAD
           v-model="searchKeyword"
           @input="handleLocationSearch(searchKeyword)"
+=======
+          v-model="keyWord"
+          @input="handleLocationSearch(keyWord)"
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
         />
         <div class="loading-icon"></div>
       </div>
@@ -44,6 +58,7 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
   <div id="modal" v-if="showSearchBox" @click="showSearchBox = false"></div>
 </template>
 
@@ -53,6 +68,17 @@ import {
   weather,
   showSearchBox,
   searchKeyword,
+=======
+  <div id="modal" v-if="isShow" @click="isShow = false"></div>
+</template>
+
+<script>
+import { getSearchData } from "../services";
+import {
+  weather,
+  isShow,
+  keyWord,
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
   locations,
   loading,
   setSearchData,
@@ -72,7 +98,11 @@ export default {
   setup(props, { emit }) {
     const locationSelect = (lon, lat) => {
       emit("handle-weather-search", lon, lat);
+<<<<<<< HEAD
       showSearchBox.value = false;
+=======
+      isShow.value = false;
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
     };
 
     const getWeatherCurrentLocation = () => {
@@ -83,17 +113,28 @@ export default {
       emit("handle-refresh-weather-current", lon, lat);
     };
 
+<<<<<<< HEAD
     const handleLocationSearch = searchKeyword => {
       getSearchData(searchKeyword)
+=======
+    const handleLocationSearch = keyWord => {
+      getSearchData(keyWord)
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
         .then(response => setSearchData(response.data, true))
         .catch(error => console.log(error));
     };
 
     return {
       weather,
+<<<<<<< HEAD
       showSearchBox,
       locationSelect,
       searchKeyword,
+=======
+      isShow,
+      locationSelect,
+      keyWord,
+>>>>>>> 32d183f (refactor code: using vercel serverless funtion...)
       locations,
       loading,
       forecastStorage,
