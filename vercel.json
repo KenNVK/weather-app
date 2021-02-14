@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "env": {
+    "VUE_APP_MAPBOX_API_KEY": "@vue-app-mapbox-api-key",
+    "VUE_APP_OWM_API_KEY": "@vue-app-owm-api-key",
+    "VUE_APP_MAPBOX_API_URl": "@vue-app-mapbox-api-url",
+    "VUE_APP_OWM_API_URL": "@vue-app-owm-api-url"
+  },
+  "build": {
+    "env": {
+      "VUE_APP_MAPBOX_API_KEY": "@vue-app-mapbox-api-key",
+      "VUE_APP_OWM_API_KEY": "@vue-app-owm-api-key",
+      "VUE_APP_MAPBOX_API_URl": "@vue-app-mapbox-api-url",
+      "VUE_APP_OWM_API_URL": "@vue-app-owm-api-url"
+    }
+  }
+}
