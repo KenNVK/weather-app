@@ -70,7 +70,7 @@ const setWeatherData = (forecast, location) => {
   // set Daily weather data
   days.value = forecast.daily;
   days.value.forEach(day => {
-    day.icon = `http://openweathermap.org/img/wn/${day.weather[0].icon}.png`;
+    day.icon = `https://openweathermap.org/img/wn/${day.weather[0].icon}.png`;
     day.date = moment(day.dt * 1000).format("ddd, DD MMM");
     day.description = day.weather[0].description;
     day.rain = Math.round(day.pop * 100);
