@@ -34,7 +34,7 @@
           <li
             class="search-list-item"
             @click="
-              locationSelect(location.geometry.coordinates[0], location.geometry.coordinates[1])
+              selectLocation(location.geometry.coordinates[0], location.geometry.coordinates[1])
             "
           >
             <i class="ri-map-pin-line search-list-icon"></i>
@@ -71,9 +71,10 @@ export default {
     focus: el => el.focus()
   },
   setup(props, { emit }) {
-    const locationSelect = (lon, lat) => {
+    const selectLocation = (lon, lat) => {
       emit("handle-weather-search", lon, lat);
       isShow.value = false;
+      keyWord.value = "";
     };
 
     const getWeatherCurrentLocation = () => {
@@ -93,7 +94,7 @@ export default {
     return {
       weather,
       isShow,
-      locationSelect,
+      selectLocation,
       keyWord,
       locations,
       loading,

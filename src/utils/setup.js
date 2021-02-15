@@ -18,7 +18,8 @@ const animations = reactive({
   cloudyNight: false,
   clearSky: false,
   clearNight: false,
-  snowy: false
+  snowy: false,
+  haze: false
 });
 const isShow = ref(false);
 const keyWord = ref("");
@@ -56,6 +57,7 @@ const setLocalStorage = () => {
 
 // set value for weather app
 const setWeatherData = (forecast, location) => {
+  console.log(forecast);
   // set current weather data
   weather.locationName = location.features[0].place_name;
   weather.temperature = Math.round(forecast.current.temp);
@@ -92,6 +94,7 @@ const setWeatherData = (forecast, location) => {
     animations.cloudyNight = false;
     animations.clearSky = false;
     animations.clearNight = false;
+    animations.haze = false;
     animations.snowy = false;
   } else if (mainWeather.includes("Clouds") && !isDay.value) {
     animations.stormy = false;
@@ -99,13 +102,19 @@ const setWeatherData = (forecast, location) => {
     animations.cloudyNight = true;
     animations.clearSky = false;
     animations.clearNight = false;
+    animations.haze = false;
     animations.snowy = false;
-  } else if (mainWeather.includes("Thunderstorm") || mainWeather.includes("Rain")) {
+  } else if (
+    mainWeather.includes("Thunderstorm") ||
+    mainWeather.includes("Rain") ||
+    mainWeather.includes("Drizzle")
+  ) {
     animations.stormy = true;
     animations.cloudy = false;
     animations.cloudyNight = false;
     animations.clearSky = false;
     animations.clearNight = false;
+    animations.haze = false;
     animations.snowy = false;
   } else if (mainWeather.includes("Clear") && isDay.value) {
     animations.stormy = false;
@@ -113,6 +122,8 @@ const setWeatherData = (forecast, location) => {
     animations.cloudyNight = false;
     animations.clearSky = true;
     animations.clearNight = false;
+    animations.haze = false;
+    animations.haze = false;
     animations.snowy = false;
   } else if (mainWeather.includes("Clear") && !isDay.value) {
     animations.stormy = false;
@@ -120,14 +131,24 @@ const setWeatherData = (forecast, location) => {
     animations.cloudyNight = false;
     animations.clearSky = false;
     animations.clearNight = true;
+    animations.haze = false;
     animations.snowy = false;
+  } else if (mainWeather.includes("Snow")) {
+    animations.stormy = false;
+    animations.cloudy = false;
+    animations.cloudyNight = false;
+    animations.clearSky = false;
+    animations.clearNight = false;
+    animations.haze = false;
+    animations.snowy = true;
   } else {
     animations.stormy = false;
     animations.cloudy = false;
     animations.cloudyNight = false;
     animations.clearSky = false;
     animations.clearNight = false;
-    animations.snowy = true;
+    animations.haze = true;
+    animations.snowy = false;
   }
 };
 

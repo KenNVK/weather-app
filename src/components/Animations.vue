@@ -3,6 +3,7 @@
     <div icon="sunny" v-if="animations.clearSky">
       <span class="sun"></span>
     </div>
+    <div icon="snowy" v-if="animations.haze"></div>
     <div icon="snowy" v-if="animations.snowy">
       <ul>
         <li></li>
