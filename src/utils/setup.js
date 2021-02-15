@@ -29,11 +29,11 @@ const forecastStorage = ref(JSON.parse(localStorage.getItem("forecast")));
 const locationStorage = ref(JSON.parse(localStorage.getItem("location")));
 
 const setSearchData = (data, boolean) => {
+  locations.value = data.features;
   loading.value = boolean;
   setTimeout(() => {
-    locations.value = data.features;
     loading.value = !boolean;
-  }, 500);
+  }, 300);
 };
 
 const setRefreshIcon = boolean => {

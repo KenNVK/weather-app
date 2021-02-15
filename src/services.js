@@ -14,5 +14,5 @@ export const getWeatherData = async (lon, lat) => {
 };
 
 export const getSearchData = async keyWord => {
-  return await axios.get(`/api/search?query=${keyWord}`);
+  return await axios.get(`/api/search?name=${keyWord}`);
 };

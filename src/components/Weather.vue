@@ -107,20 +107,17 @@ export default {
         const lon = position.coords.longitude;
         const lat = position.coords.latitude;
         handleData(lon, lat);
-        setRefreshIcon(true);
       });
     };
 
     // Handle refresh data current
     const handlerefreshWeatherCurrent = (lon, lat) => {
       handleData(lon, lat);
-      setRefreshIcon(true);
     };
 
     // Handle get data by search
     const handleWeatherSearch = (lon, lat) => {
       handleData(lon, lat);
-      setRefreshIcon(true);
     };
 
     // Handle data function
@@ -129,6 +126,7 @@ export default {
         .then(response => {
           saveLocalStorage(response[0].data, response[1].data);
           setLocalStorage();
+          setRefreshIcon(true);
           setWeatherData(forecastStorage.value, locationStorage.value);
         })
         .catch(error => console.log(error));

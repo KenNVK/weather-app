@@ -35,4 +35,8 @@
     width: 4.5rem;
     height: 4.5rem;
   }
+
+  .search-box {
+    width: 90% !important;
+  }
 }

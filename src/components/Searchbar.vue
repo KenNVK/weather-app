@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { debounce } from "debounce";
 import { getSearchData } from "../services";
 import {
   weather,
@@ -83,11 +84,11 @@ export default {
       emit("handle-refresh-weather-current", lon, lat);
     };
 
-    const handleLocationSearch = keyWord => {
+    const handleLocationSearch = debounce(keyWord => {
       getSearchData(keyWord)
         .then(response => setSearchData(response.data, true))
         .catch(error => console.log(error));
-    };
+    }, 300);
 
     return {
       weather,
@@ -159,12 +160,16 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 300px;
+  width: 400px;
   padding: 10px 0;
   border-radius: 10px;
   color: #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   background-color: #222;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 .input-wrap {
