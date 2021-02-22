@@ -57,7 +57,6 @@ const setLocalStorage = () => {
 
 // set value for weather app
 const setWeatherData = (forecast, location) => {
-  console.log(forecast);
   // set current weather data
   weather.locationName = location.features[0].place_name;
   weather.temperature = Math.round(forecast.current.temp);
